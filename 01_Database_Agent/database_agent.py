@@ -73,8 +73,9 @@ agent = create_pandas_dataframe_agent(llm= model, df=df, verbose=False, allow_da
 # Creating SQL Agent
 from langchain.agents import create_sql_agent
 from langchain.agents.agent_toolkits import SQLDatabaseToolkit
-from langchain.sql_database import SQLDatabase
+# from langchain.sql_database import SQLDatabase
 from sqlalchemy import create_engine
+from langchain_community.utilities import SQLDatabase
 
 database_file_path = "./db/test.db"
 
@@ -184,5 +185,5 @@ agent_executor_SQL = create_sql_agent(
 )
 
 
-response = model.invoke(Question)
-print(response['output'])
+response = model.invoke(QUESTION)
+print(response)
