@@ -1,0 +1,19 @@
+import json
+def get_current_weather(location, unit="fahrenheit"):
+    """Return the location current weather
+    The default unit is fahrenheit"""
+
+    if "newyork" in location.lower():
+        return json.dump({"location": "Newyork", "temperature": 40, "unit": unit})
+    
+    elif "san francisco" in location.lower():
+        return json.dumps({"location": "San Francisco", "temperature": "50", "unit": unit})
+    
+    elif "las vegas" in location.lower():
+        return json.dumps({"location": "Las Vegas", "temperature": "70", "unit": unit})
+    else:
+        return json.dumps({
+            "location": "unknown", "temperature": "unknown"
+        })
+    
+    
